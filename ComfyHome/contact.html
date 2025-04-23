@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comfy Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </div>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="product.html">Product</a></li>
+                <li><a href="shop.html">Shop</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="contact-cover">
+       </div>
+    <div id="progress">
+        <span id="progress-value">&#x1F815;</span>
+    </div>
+    <br><br>  
+    <div class="container">
+        <h1 class="contact">Contact Us</h1>
+    </div>
+    <br><br>
+    <div class="container2">
+        <div class="image-container2">
+            <img src="images/cu.jpg" alt="Contact Us">
+        </div>
+        <div class="form-container2">
+            <h2 class="e-c">Leave us a message and we will get back to you. </h2>
+            <form class="t-f" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="2d8eb0b8-6f96-4e56-a162-41a268930b02">
+
+                <label class="lt-f" for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder=" Enter your Name" required>
+
+                <label class="lt-f" for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder=" Enter your Email" required>
+
+                <label class="lt-f" for="massage">Your massage</label>
+                <textarea type="textarea" rows="4" cols="50" id="massage" name="massage" placeholder=" Enter your Massage" required></textarea>
+                <br><br>
+                <input class="st-f" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+    <script src="mace.js"></script>
+    <br><br><br>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Showroom</h3>
+                <p>123 Design Street</p>
+                <p>Kandy District</p>
+                <p>Katugasthota</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Opening Hours</h3>
+                <p>Monday - Friday: 9am - 7pm</p>
+                <p>Saturday: 10am - 6pm</p>
+                <p>Sunday: 11am - 5pm</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                <p><i class="fas fa-envelope"></i> info@urbanfurnish.com</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Subscribe for updates and offers</p>
+                <form>
+                    <input type="email" placeholder="Your email" style="padding: 8px; width: 100%; margin-bottom: 10px;">
+                    <button type="submit" style="background: #f39c12; color: white; border: none; padding: 8px 15px; cursor: pointer;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Comfy Home. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

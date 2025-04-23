@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comfy Home | Premium Furniture</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        /* Additional styles for the enhanced slider */
+        .hero-slider {
+            width: 100%;
+            height: 80vh;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .hero-slide.active {
+            opacity: 1;
+        }
+        
+        .slide-1 { background-image: url("images/h1.jpg"); }
+        .slide-2 { background-image: url("images/h2.jpg"); }
+        .slide-3 { background-image: url("images/h3.webp"); }
+        .slide-4 { background-image: url("images/h4.webp"); }
+        
+        .slider-caption {
+            position: absolute;
+            bottom: 20%;
+            left: 10%;
+            background-color: rgba(0,0,0,0.6);
+            color: white;
+            padding: 20px;
+            max-width: 500px;
+        }
+        
+        .slider-caption h2 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        
+        .slider-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.5);
+            cursor: pointer;
+        }
+        
+        .slider-dot.active {
+            background-color: white;
+        }
+        
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            z-index: 10;
+        }
+        
+        .slider-arrow:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+        
+        .arrow-left {
+            left: 20px;
+        }
+        
+        .arrow-right {
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Urban Furnish Logo">
+        </div>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="shop.html">Shop</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!--Slider Section -->
+    <div class="hero-slider">
+        <div class="hero-slide slide-1 active">
+            <div class="slider-caption">
+                <h2>Elevate Your Living Space</h2>
+            </div>
+        </div>
+        <div class="hero-slide slide-2">
+            <div class="slider-caption">
+                <h2>Modern Designs for Modern Lives</h2>
+            </div>
+        </div>
+        <div class="hero-slide slide-3">
+            <div class="slider-caption">
+                <h2>Quality Craftsmanship</h2>
+            </div>
+        </div>
+        <div class="hero-slide slide-4">
+            <div class="slider-caption">
+                <h2>Comfort Meets Style</h2>
+            </div>
+        </div>
+        
+        <div class="slider-arrow arrow-left" onclick="prevSlide()">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="slider-arrow arrow-right" onclick="nextSlide()">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+        
+        <div class="slider-nav">
+            <div class="slider-dot active" onclick="goToSlide(0)"></div>
+            <div class="slider-dot" onclick="goToSlide(1)"></div>
+            <div class="slider-dot" onclick="goToSlide(2)"></div>
+            <div class="slider-dot" onclick="goToSlide(3)"></div>
+        </div>
+    </div>
+    
+    <div id="progress">
+        <span id="progress-value">&#x1F815;</span>
+    </div>
+    
+    <section class="about-us">
+        <div class="about-images">
+            <img src="images/h5.webp" alt="Furniture Showroom" class="spice-img">
+        </div>
+        <div class="about-text">
+            <h1>About Comfy Home</h1>
+            <p>Founded in 2010, Urban Furnish has been transforming houses into homes with our exquisite collection of furniture. We combine contemporary design with timeless craftsmanship to create pieces that are both beautiful and functional. Our team of skilled designers and artisans work tirelessly to bring you furniture that stands the test of time while keeping up with the latest trends.</p>
+            <p>We source only the finest materials and pay meticulous attention to every detail, ensuring that each piece meets our high standards of quality and durability. Whether you're furnishing a cozy apartment or a spacious home, Urban Furnish has the perfect pieces to reflect your personal style.</p>
+        </div>
+    </section>
+    
+    <section class="mv-box">
+        <div class="vm">
+            <div class="mission">
+                <h1>Our Mission</h1>
+                <p>To create inspiring, high-quality furniture that enhances everyday living. We strive to make exceptional design accessible to everyone while maintaining sustainable practices throughout our production process.</p>
+            </div>
+            <div class="vision">
+                <h1>Our Vision</h1>
+                <p>To be the leading innovator in furniture design, recognized globally for our commitment to quality, sustainability, and customer satisfaction. We envision homes where every piece tells a story of craftsmanship and care.</p>
+            </div>
+        </div>
+    </section>
+    <br><br><br>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Showroom</h3>
+                <p>123 Design Street</p>
+                <p>Kandy District</p>
+                <p>Katugasthota</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Opening Hours</h3>
+                <p>Monday - Friday: 9am - 7pm</p>
+                <p>Saturday: 10am - 6pm</p>
+                <p>Sunday: 11am - 5pm</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                <p><i class="fas fa-envelope"></i> info@urbanfurnish.com</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Subscribe for updates and offers</p>
+                <form>
+                    <input type="email" placeholder="Your email" style="padding: 8px; width: 100%; margin-bottom: 10px;">
+                    <button type="submit" style="background: #f39c12; color: white; border: none; padding: 8px 15px; cursor: pointer;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Comfy Home. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Hero Slider Functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        
+        function showSlide(index) {
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            // Remove active class from all dots
+            dots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+            
+            // Show the selected slide
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlide = index;
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        function goToSlide(index) {
+            showSlide(index);
+        }
+        
+        // Auto-advance slides every 5 seconds
+        setInterval(nextSlide, 5000);
+        
+        // Scroll to top functionality
+        let calcScrollValue = () => {
+            let scrollProgress = document.getElementById("progress");
+            let progressValue = document.getElementById("progress-value");
+            let pos = document.documentElement.scrollTop;
+            let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrollvalue = Math.round((pos * 100)/ calcHeight);
+            
+            if(pos > 100){
+                scrollProgress.style.display = "grid";
+            } else {
+                scrollProgress.style.display = "none";
+            }
+            
+            scrollProgress.addEventListener("click", () => {
+                document.documentElement.scrollTop = 0;
+            });
+        };
+
+        window.onscroll = calcScrollValue;
+        window.onload = calcScrollValue;
+    </script>
+</body>
+</html>

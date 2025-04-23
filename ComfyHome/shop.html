@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comfy Home</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+ body {
+  color: #000000;
+  background-color: #f4f4f4;
+  padding: 0px;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px; 
+}
+h1 {
+  text-align: center;
+  color: #6b4caf;
+  margin-bottom: 20px;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+th, td {
+  padding: 10px;
+  text-align:left;
+  border-bottom: 1px solid #ddd;
+  width: fit-content;
+  cursor: pointer; 
+  transition: background-color 0.3s, color 0.3s;
+}
+th {
+  background-color: #6b4caf;
+  color: white;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+tbody tr:hover {
+  background-color: #e6e6ff; 
+}
+tbody tr {
+  transition: background-color 0.3s;
+}
+td:active {
+  background-color: #6b4caf;
+  color: white;
+  transform: scale(1.05); 
+}
+td.clicked {
+  background-color: #6b4caf;
+  color: white;
+  border-radius: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-column {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+td:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    background-color: rgb(231, 157, 229);
+  }
+   th:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    background-color: rgb(123, 6, 121); 
+}
+
+.furniture-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px 0;
+}
+
+.furniture-item {
+  width: 30%;
+  min-width: 250px;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.furniture-item:hover {
+  transform: translateY(-10px);
+}
+
+.furniture-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.furniture-item h3 {
+  margin: 10px 0 5px;
+  color: #6b4caf;
+}
+
+.furniture-item p {
+  color: #666;
+}
+
+.showroom-image {
+  width: 99.5vw;
+  height: auto;
+  display: block;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  max-width: none;
+}
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Comfy Home Logo">
+        </div>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="product.html">Product</a></li>
+                <li><a href="shop.html">Shop</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <img src="images/imgs1.jpg" alt="Comfy Home Showroom" class="showroom-image">
+    
+    <div class="shop-cover">
+      <div class="caption-s">
+      <h1>Today's <br>Special Offers</h1>
+    </div>
+  </div>
+    <br><br>
+    
+    <div class="container">
+      <h2>Our Featured Collections</h2>
+      <div class="furniture-gallery">
+        <div class="furniture-item">
+          <img src="images/imgs2.webp" alt="Luxury Sofa Set">
+          <h3>Elegance Sofa Set</h3>
+          <p>Premium fabric with royal cushioning</p>
+        </div>
+        <div class="furniture-item">
+          <img src="images/imgs3.jpg" alt="Modern Dining Table">
+          <h3>Modern Dining Set</h3>
+          <p>Solid oak table with 6 upholstered chairs</p>
+        </div>
+        <div class="furniture-item">
+          <img src="images/imgs4.jpg" alt="Bedroom Furniture">
+          <h3>Royal Bedroom Suite</h3>
+          <p>Complete bedroom set with king-size bed</p>
+        </div>
+      </div>
+    </div>
+    <br><br><br>
+    
+    <div id="progress">
+      <span id="progress-value">&#x1F815;</span>
+  </div>
+  <div class="container">
+    <h1>Current Promotions</h1>
+    <table id="user-price-table">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Price <br>(Rs)</th>
+          <th>Discount<br>Offer</th>
+          <th>Availability</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data will be dynamically inserted here -->
+         
+      </tbody>
+    </table>
+  </div>  
+  <br><br>
+  
+  <div class="container">
+    <h2>New Arrivals</h2>
+    <div class="furniture-gallery">
+      <div class="furniture-item">
+        <img src="images/imgs5.webp" alt="Ergonomic Office Chair">
+        <h3>Executive Office Chair</h3>
+        <p>Ergonomic design with lumbar support</p>
+      </div>
+      <div class="furniture-item">
+        <img src="images/imgs6.jpg" alt="Modern Bookshelf">
+        <h3>Modern Bookshelf</h3>
+        <p>5-tier shelving unit in walnut finish</p>
+      </div>
+      <div class="furniture-item">
+        <img src="images/imgs7.jpg" alt="Glass Coffee Table">
+        <h3>Glass Coffee Table</h3>
+        <p>Tempered glass with stainless steel base</p>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const priceTableBody = document.querySelector('#user-price-table tbody');
+  let storedData = JSON.parse(localStorage.getItem('priceData')) || [];
+
+  if (storedData.length === 0) {
+    // Default furniture data if none exists
+    storedData = [
+      { product: "Elegance Sofa Set", price: "125,000", quantity: "15%", quality: "In Stock" },
+      { product: "Modern Dining Set", price: "89,500", quantity: "10%", quality: "Limited" },
+      { product: "Royal Bedroom Suite", price: "210,000", quantity: "20%", quality: "In Stock" },
+      { product: "Executive Office Chair", price: "24,900", quantity: "5%", quality: "In Stock" }
+    ];
+    localStorage.setItem('priceData', JSON.stringify(storedData));
+  }
+
+  for (let i = 0; i < storedData.length; i++) {
+    const row = document.createElement('tr');
+
+    const productCell = document.createElement('td');
+    productCell.textContent = storedData[i]?.product || `Product ${i + 1}`;
+    row.appendChild(productCell);
+
+    const priceCell = document.createElement('td');
+    priceCell.textContent = storedData[i]?.price || 'N/A';
+    row.appendChild(priceCell);
+
+    const quantityCell = document.createElement('td');
+    quantityCell.textContent = storedData[i]?.quantity || 'N/A';
+    row.appendChild(quantityCell);
+
+    const qualityCell = document.createElement('td');
+    qualityCell.textContent = storedData[i]?.quality || '';
+    row.appendChild(qualityCell);
+
+    priceTableBody.appendChild(row);
+  }
+});
+let calcScrollValue = () =>{
+  let scrollProgress = document.getElementById("progress");
+  let progressValue = document.getElementById("progress-value");
+  let pos = document.documentElement.scrollTop;
+  let calcHeight = document.documentElement.
+  scrollHeight - document.documentElement.clientHeight;
+  let scrollvalue = Math.round((pos * 100)/ calcHeight);
+ /* console.log(scrollvalue);*/
+ if(pos>100){
+  scrollProgress.style.display = "grid";
+ }
+ else{
+  scrollProgress.style.display = "none";
+ }
+ scrollProgress.addEventListener("click",()=>{
+  document.documentElement.scrollTop = 0;
+ });
+ scrollProgress.style.background = 'conic-gradient(#03cc65 ${scrollValue}%, #d7d7d7 ${scrollValue}%)';
+};
+window.onscroll = calcScrollValue;
+window.onload = calcScrollValue;
+  </script>
+    <br>
+    <p style="color: #2f2e2e; text-align: justify;padding-left: 25px; padding-right: 25px; font-size: larger; background-color: #ebebf2;">
+      At Comfy Home, we bring elegance and comfort to your living spaces. Our current promotions offer exceptional value on premium furniture collections. Remember, the prices you see reflect our seasonal discounts, and we're proud to offer quality that exceeds industry standards. If you're looking for something special that's not listed here, please <a href="contact.html" style=" text-decoration-line: none; text-decoration-color: #49239b;">contact our design consultants!</a> We offer custom furniture solutions and interior design services to transform your home into a haven of comfort and style. Visit our showroom to experience the Comfy Home difference firsthand.</p>
+      <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Showroom</h3>
+                <p>123 Design Street</p>
+                <p>Kandy District</p>
+                <p>Katugasthota</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Opening Hours</h3>
+                <p>Monday - Friday: 9am - 7pm</p>
+                <p>Saturday: 10am - 6pm</p>
+                <p>Sunday: 11am - 5pm</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                <p><i class="fas fa-envelope"></i> info@comfyhome.com</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Subscribe for design tips and exclusive offers</p>
+                <form>
+                    <input type="email" placeholder="Your email" style="padding: 8px; width: 100%; margin-bottom: 10px;">
+                    <button type="submit" style="background: #f39c12; color: white; border: none; padding: 8px 15px; cursor: pointer;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Comfy Home. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
