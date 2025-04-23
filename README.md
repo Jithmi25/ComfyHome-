@@ -33,4 +33,4 @@ A responsive, client-side e-commerce demo for home furniture featuring real-time
 
 1. Clone the repository:
 ```bash
-git clone 
+git clone https://github.com/Jithmi25/ComfyHome-.git
